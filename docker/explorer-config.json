@@ -1,0 +1,9 @@
+{
+  "network-configs": {
+    "universidades-network": {
+      "name": "Red de Universidades",
+      "profile": "./connection-profile/universidades-network.json"
+    }
+  },
+  "license": "Apache-2.0"
+} 

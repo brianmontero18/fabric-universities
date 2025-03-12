@@ -1,0 +1,73 @@
+{
+  "name": "universidades-network",
+  "version": "1.0.0",
+  "client": {
+    "tlsEnable": true,
+    "adminCredential": {
+      "id": "exploreradmin",
+      "password": "exploreradminpw"
+    },
+    "enableAuthentication": true,
+    "organization": "IEBSMSP",
+    "connection": {
+      "timeout": {
+        "peer": {
+          "endorser": "300"
+        },
+        "orderer": "300"
+      }
+    }
+  },
+  "channels": {
+    "universidadeschannel": {
+      "peers": {
+        "peer0.iebs.universidades.com": {},
+        "peer0.tec.universidades.com": {}
+      }
+    }
+  },
+  "organizations": {
+    "IEBSMSP": {
+      "mspid": "IEBSMSP",
+      "peers": ["peer0.iebs.universidades.com"],
+      "adminPrivateKey": {
+        "path": "/opt/explorer/organizations/peerOrganizations/iebs.universidades.com/users/Admin@iebs.universidades.com/msp/keystore/priv_sk"
+      },
+      "signedCert": {
+        "path": "/opt/explorer/organizations/peerOrganizations/iebs.universidades.com/users/Admin@iebs.universidades.com/msp/signcerts/Admin@iebs.universidades.com-cert.pem"
+      }
+    },
+    "TECMSP": {
+      "mspid": "TECMSP",
+      "peers": ["peer0.tec.universidades.com"],
+      "adminPrivateKey": {
+        "path": "/opt/explorer/organizations/peerOrganizations/tec.universidades.com/users/Admin@tec.universidades.com/msp/keystore/priv_sk"
+      },
+      "signedCert": {
+        "path": "/opt/explorer/organizations/peerOrganizations/tec.universidades.com/users/Admin@tec.universidades.com/msp/signcerts/Admin@tec.universidades.com-cert.pem"
+      }
+    }
+  },
+  "peers": {
+    "peer0.iebs.universidades.com": {
+      "url": "grpcs://peer0.iebs.universidades.com:7051",
+      "tlsCACerts": {
+        "path": "/opt/explorer/organizations/peerOrganizations/iebs.universidades.com/peers/peer0.iebs.universidades.com/tls/ca.crt"
+      }
+    },
+    "peer0.tec.universidades.com": {
+      "url": "grpcs://peer0.tec.universidades.com:9051",
+      "tlsCACerts": {
+        "path": "/opt/explorer/organizations/peerOrganizations/tec.universidades.com/peers/peer0.tec.universidades.com/tls/ca.crt"
+      }
+    }
+  },
+  "orderers": {
+    "orderer.universidades.com": {
+      "url": "grpcs://orderer.universidades.com:7050",
+      "tlsCACerts": {
+        "path": "/opt/explorer/organizations/ordererOrganizations/universidades.com/orderers/orderer.universidades.com/tls/ca.crt"
+      }
+    }
+  }
+} 
